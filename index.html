@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISABEL</title>
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="favicon.ico">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Dancing+Script:wght@600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="pupil-cursor" id="pupilCursor"></div>
+<div id="tsparticles"></div>
+
+<section id="hero" class="hero">
+  <div class="hero-eye">
+    <svg viewBox="0 0 300 160" class="eye-svg" id="heroEyeSvg">
+      <defs>
+        <radialGradient id="irisGradient" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"  stop-color="#b6c76a" />
+          <stop offset="42%" stop-color="#b6c76a" />
+          <stop offset="66%" stop-color="#e8c14c" />
+          <stop offset="88%" stop-color="#a9853f" />
+          <stop offset="100%" stop-color="#5c4620" />
+        </radialGradient>
+      </defs>
+      <path id="heroEyeLid" class="eye-lid" d="M 10 80 Q 150 80 290 80 Q 150 80 10 80 Z"/>
+      <clipPath id="heroClip">
+        <path id="heroClipPath" d="M 10 80 Q 150 80 290 80 Q 150 80 10 80 Z"/>
+      </clipPath>
+      <g clip-path="url(#heroClip)">
+        <rect x="0" y="0" width="300" height="160" class="sclera" />
+        <circle cx="150" cy="80" r="55" class="iris" />
+        <g id="irisTexture"></g>
+        <circle cx="150" cy="80" r="24" class="pupil" />
+        <circle cx="138" cy="65" r="8" class="glint" />
+      </g>
+      <path class="eye-outline" d="M 10 80 Q 150 10 290 80 Q 150 150 10 80 Z"/>
+    </svg>
+  </div>
+
+  <p class="eyebrow">Así de lindos son tus ojitos, VIEJITA CHISMOSA V:</p>
+  <h1 class="hero-title">Canciones<br>que vi hoy y combinan  <br>con tus ojitos</h1>
+  <p class="hero-sub" id="heroSub"></p>
+
+  <button class="btn-open" id="btnOpen">
+    <span>abrir los ojos</span>
+  </button>
+  <p class="hero-hint">actívalo con sonido para vivir la experiencia completa</p>
+</section>
+
+<main id="chapters"></main>
+
+<section id="outro" class="outro">
+  <div class="outro-inner">
+    <p class="outro-eyebrow">y aún faltan más miradas por escribir</p>
+    <h2 class="outro-title">Cada canción<br>que esta aqui <br>me hace pensar en ti mi niña</h2>
+    <p class="outro-signature">tus ojos son muy lindos y yo soy,<br>quien no deja de mirarte.</p>
+    <button class="btn-replay" id="btnReplay">volver a empezar</button>
+  </div>
+</section>
+
+<div class="now-playing" id="nowPlaying">
+  <div class="np-eye" id="npToggle">
+    <svg viewBox="0 0 60 34" class="np-eye-svg">
+      <path class="np-lid" d="M2 17 Q30 17 58 17"/>
+      <circle class="np-iris" cx="30" cy="17" r="10"/>
+      <circle class="np-pupil" cx="30" cy="17" r="4.5"/>
+    </svg>
+  </div>
+  <div class="np-info">
+    <p class="np-chapter" id="npChapter">—</p>
+    <p class="np-song" id="npSong">—</p>
+  </div>
+  <div class="np-bars" id="npBars">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
